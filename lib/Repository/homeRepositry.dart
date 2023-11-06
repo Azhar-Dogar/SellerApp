@@ -10,6 +10,8 @@ class HomeRepository {
       var grandFinalTotal =
           await ApiBaseHelper().postAPICall(getSalesListApi, parameter);
       String temp = grandFinalTotal["grand_final_total"];
+      print("Result");
+      print(temp);
       return temp;
     } on Exception {
       throw ApiException('Something went wrong');
@@ -22,6 +24,8 @@ class HomeRepository {
     try {
       var policy =
           await ApiBaseHelper().postAPICall(getStatisticsApi, parameter);
+      print("Policy");
+      print(policy);
        return policy;
     } on Exception {
       throw ApiException('Something went wrong');

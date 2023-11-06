@@ -90,7 +90,7 @@ class _AddFAQsState extends State<AddFAQs> with TickerProviderStateMixin {
           padding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.4,
+            // height: MediaQuery.of(context).size.height * 0.4,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -111,6 +111,7 @@ class _AddFAQsState extends State<AddFAQs> with TickerProviderStateMixin {
                   left: 42,
                 ),
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -118,14 +119,16 @@ class _AddFAQsState extends State<AddFAQs> with TickerProviderStateMixin {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          getTranslated(context, 'Add Question')!,
-                          style: const TextStyle(
-                            color: black,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: "PlusJakartaSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 16.0,
+                        Expanded(
+                          child: Text(
+                            getTranslated(context, 'Add Question')!,
+                            style: const TextStyle(
+                              color: black,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "PlusJakartaSans",
+                              fontStyle: FontStyle.normal,
+                              fontSize: 16.0,
+                            ),
                           ),
                         ),
                         InkWell(
@@ -273,15 +276,18 @@ class _AddFAQsState extends State<AddFAQs> with TickerProviderStateMixin {
                                   borderRadius: BorderRadius.circular(
                                       circularBorderRadius5),
                                 ),
-                                width: 120,
-                                height: 40,
-                                child: Center(
-                                  child: Text(
-                                    getTranslated(context, 'Submit')!,
-                                    style: const TextStyle(
-                                      color: white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
+                                // width: 120,
+                                // height: 40,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 5),
+                                  child: Center(
+                                    child: Text(
+                                      getTranslated(context, 'Submit')!,
+                                      style: const TextStyle(
+                                        color: white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ),

@@ -1,43 +1,64 @@
 {
   "project_info": {
-    "project_number": "358074586334",
-    "project_id": "eshop-c4ebf",
-    "storage_bucket": "eshop-c4ebf.appspot.com"
+    "project_number": "768995689619",
+    "project_id": "eshop-ecd09",
+    "storage_bucket": "eshop-ecd09.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:358074586334:android:9924bd5ff73804b98fde4f",
+        "mobilesdk_app_id": "1:768995689619:android:085ec4a37321909940b966",
         "android_client_info": {
-          "package_name": "wrteam.seller.multivendor"
+          "package_name": "com.deliveryboy.multivendor"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "358074586334-ma0mrvsnb4bnfajdmg2m586fj7sjr3bl.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDh6lJSUhBGRJyHSZFy4I_VH7V667Kkl5A"
+          "current_key": "AIzaSyC5T1eGeplm2za9F74HE4rHsU3zketb4C4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "358074586334-ma0mrvsnb4bnfajdmg2m586fj7sjr3bl.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "358074586334-mh577ombiqv00igb17hjsgfas3j41lnl.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "wrteam.eshop.multivendor"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768995689619:android:78ef74fa2742a0cd40b966",
+        "android_client_info": {
+          "package_name": "eShop.multivendor.customer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5T1eGeplm2za9F74HE4rHsU3zketb4C4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768995689619:android:5ddd68078495c6d140b966",
+        "android_client_info": {
+          "package_name": "wrteam.seller.multivendor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5T1eGeplm2za9F74HE4rHsU3zketb4C4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }

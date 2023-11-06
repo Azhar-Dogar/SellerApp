@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -49,22 +46,30 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCO5Lir6G2rszPcsR-qwOhfk5vYLg_UrHU',
+    appId: '1:768995689619:web:7d7de41e011b951440b966',
+    messagingSenderId: '768995689619',
+    projectId: 'eshop-ecd09',
+    authDomain: 'eshop-ecd09.firebaseapp.com',
+    storageBucket: 'eshop-ecd09.appspot.com',
+    measurementId: 'G-YPCJE34CK1',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC_1l5qdSvmWJ7MRj82U3_V4s6ymEprFdg',
-    appId: '1:327324836622:android:728981062068bfc536ad5f',
-    messagingSenderId: '327324836622',
-    projectId: 'eshop-multivendor-new',
-    storageBucket: 'eshop-multivendor-new.appspot.com',
+    apiKey: 'AIzaSyC5T1eGeplm2za9F74HE4rHsU3zketb4C4',
+    appId: '1:768995689619:android:5ddd68078495c6d140b966',
+    messagingSenderId: '768995689619',
+    projectId: 'eshop-ecd09',
+    storageBucket: 'eshop-ecd09.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBusENYY_9QM5nLi3lMJaCaECAJB2W-LhA',
-    appId: '1:327324836622:ios:c962df41827f3f8a36ad5f',
-    messagingSenderId: '327324836622',
-    projectId: 'eshop-multivendor-new',
-    storageBucket: 'eshop-multivendor-new.appspot.com',
-    androidClientId: '327324836622-ji2sarngpv0f0ga7pucnf128apm136q3.apps.googleusercontent.com',
-    iosClientId: '327324836622-nngdk8fa27nhmnm8vmr8boiffr9o96ls.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAagosfit5ZZslu3_Xt1svP1iGs_xNMKh0',
+    appId: '1:768995689619:ios:9e5947496968f3a440b966',
+    messagingSenderId: '768995689619',
+    projectId: 'eshop-ecd09',
+    storageBucket: 'eshop-ecd09.appspot.com',
     iosBundleId: 'eshop.seller.multivendor',
   );
 }

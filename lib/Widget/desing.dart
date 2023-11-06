@@ -28,12 +28,19 @@ class DesignConfiguration {
     BuildContext context,
     double price,
   ) {
-    return NumberFormat.currency(
-      locale: Platform.localeName,
+    print("Here is Locales");
+    print(supportedLocale);
+    final NumberFormat currencyFormatter = NumberFormat.currency(
+        locale: supportedLocale,
       name: supportedLocale,
       symbol: CUR_CURRENCY,
       decimalDigits: int.parse(Decimal_Digits),
-    ).format(price).toString();
+      customPattern: '\u00a4#,##0.00',
+    );
+    final formattedPrice = currencyFormatter.format(price);
+    return formattedPrice
+        .replaceAll(',', '.')
+    ;
   }
 
   static erroWidget(double size) {

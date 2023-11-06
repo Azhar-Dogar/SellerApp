@@ -827,20 +827,24 @@ class _AddProductState extends State<AddProduct> with TickerProviderStateMixin {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text(
-              getTranslated(context, "Add New Product")!,
-              style: const TextStyle(
-                color: white,
-                fontSize: textFontSize16,
-                fontWeight: FontWeight.bold,
+            Expanded(
+              child: Text(
+                getTranslated(context, "Add New Product")!,
+                style: const TextStyle(
+                  color: white,
+                  fontSize: textFontSize16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             SizedBox(width: width * 0.1),
-            Text(
-              "${getTranslated(context, "Step")!} ${addProvider!.currentPage} ${getTranslated(context, "of")!} 4",
-              style: const TextStyle(
-                color: white,
-                fontSize: textFontSize14,
+            Expanded(
+              child: Text(
+                "${getTranslated(context, "Step")!} ${addProvider!.currentPage} ${getTranslated(context, "of")!} 4",
+                style: const TextStyle(
+                  color: white,
+                  fontSize: textFontSize14,
+                ),
               ),
             ),
           ],

@@ -71,41 +71,43 @@ class GradientAppBar extends StatelessWidget {
                   height: 1,
                   decoration: const BoxDecoration(color: white)),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                InkWell(
-                  onTap: () => Navigator.of(context).pop(),
-                  child: const Padding(
-                    padding: EdgeInsetsDirectional.only(start: 15.0),
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: white,
-                      size: 25,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 36,
-                  child: Padding(
-                    padding: const EdgeInsetsDirectional.only(
-                      top: 9.0,
-                      start: 15,
-                      end: 15,
-                    ),
-                    child: Text(
-                      title,
-                      style: const TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+            SizedBox(
+              height: 60,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: const Padding(
+                      padding: EdgeInsetsDirectional.only(start: 15.0),
+                      child: Icon(
+                        Icons.arrow_back,
                         color: white,
-                        fontSize: textFontSize16,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
+                        size: 25,
                       ),
                     ),
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsetsDirectional.only(
+                        top: 9.0,
+                        start: 15,
+                        end: 15,
+                      ),
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          fontFamily: 'PlusJakartaSans',
+                          color: white,
+                          fontSize: textFontSize16,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

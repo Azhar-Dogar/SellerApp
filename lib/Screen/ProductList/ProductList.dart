@@ -192,70 +192,74 @@ class StateProduct extends State<ProductList>
                                           ),
                                         ),
                                       ),
-                                Row(
-                                  children: [
-                                    serachIsEnable
-                                        ? Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .only(start: 8.0),
-                                            child: SizedBox(
-                                              height: 60,
-                                              width: width * 0.7,
-                                              child: TextField(
-                                                controller: productListProvider!
-                                                    .controllerForText,
-                                                autofocus: true,
-                                                style: const TextStyle(
-                                                  color: white,
-                                                ),
-                                                decoration: InputDecoration(
-                                                  prefixIcon: const Icon(
-                                                      Icons.search,
-                                                      color: white),
-                                                  hintText: getTranslated(
-                                                      context, "Search"),
-                                                  hintStyle: const TextStyle(
-                                                      color: white),
-                                                  disabledBorder:
-                                                      const UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: white,
-                                                    ),
-                                                  ),
-                                                  enabledBorder:
-                                                      const UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: white,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : SizedBox(
-                                            height: 36,
+                                Expanded(
+                                  child: Row(
+                                    children: [
+                                      serachIsEnable
+                                          ? Expanded(
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .only(
-                                                top: 9.0,
-                                                start: 15,
-                                                end: 15,
+                                                padding: const EdgeInsetsDirectional
+                                                    .only(start: 8.0),
+                                                child: SizedBox(
+                                                  height: 60,
+                                                  // width: width * 0.7,
+                                                  child: TextField(
+                                                    controller: productListProvider!
+                                                        .controllerForText,
+                                                    autofocus: true,
+                                                    style: const TextStyle(
+                                                      color: white,
+                                                    ),
+                                                    decoration: InputDecoration(
+                                                      prefixIcon: const Icon(
+                                                          Icons.search,
+                                                          color: white),
+                                                      hintText: getTranslated(
+                                                          context, "Search"),
+                                                      hintStyle: const TextStyle(
+                                                          color: white),
+                                                      disabledBorder:
+                                                          const UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: white,
+                                                        ),
+                                                      ),
+                                                      enabledBorder:
+                                                          const UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: white,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
                                               ),
-                                              child: Text(
-                                                getTranslated(
-                                                    context, 'PRODUCT')!,
-                                                style: const TextStyle(
-                                                  fontFamily: 'PlusJakartaSans',
-                                                  color: white,
-                                                  fontSize: textFontSize16,
-                                                  fontWeight: FontWeight.w400,
-                                                  fontStyle: FontStyle.normal,
+                                          )
+                                          : SizedBox(
+                                              height: 36,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .only(
+                                                  top: 9.0,
+                                                  start: 15,
+                                                  end: 15,
+                                                ),
+                                                child: Text(
+                                                  getTranslated(
+                                                      context, 'PRODUCT')!,
+                                                  style: const TextStyle(
+                                                    fontFamily: 'PlusJakartaSans',
+                                                    color: white,
+                                                    fontSize: textFontSize16,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontStyle: FontStyle.normal,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                                 Row(
                                   children: [
@@ -606,53 +610,57 @@ class StateProduct extends State<ProductList>
                                             vertical: 4.0),
                                         child: Row(
                                           children: <Widget>[
-                                            Text(
-                                                "${getTranslated(context, 'PRICE_LBL')} : ",
-                                                style: const TextStyle(
-                                                  color: lightBlack2,
-                                                  fontWeight: FontWeight.w400,
-                                                  fontFamily: "PlusJakartaSans",
-                                                  fontStyle: FontStyle.normal,
-                                                  fontSize: textFontSize14,
-                                                ),
-                                                textAlign: TextAlign.left),
+                                            Expanded(
+                                              child: Text(
+                                                  "${getTranslated(context, 'PRICE_LBL')} : ",
+                                                  style: const TextStyle(
+                                                    color: lightBlack2,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: "PlusJakartaSans",
+                                                    fontStyle: FontStyle.normal,
+                                                    fontSize: textFontSize14,
+                                                  ),
+                                                  textAlign: TextAlign.left),
+                                            ),
                                             model.prVarientList!.isNotEmpty
-                                                ? Text(
-                                                    double.parse(model
-                                                                .prVarientList![
-                                                                    model
-                                                                        .selVarient!]
-                                                                .disPrice!) !=
-                                                            0
-                                                        ? DesignConfiguration
-                                                            .getPriceFormat(
-                                                            context,
-                                                            double.parse(model
-                                                                .prVarientList![
-                                                                    model
-                                                                        .selVarient!]
-                                                                .disPrice!),
-                                                          )!
-                                                        : DesignConfiguration
-                                                            .getPriceFormat(
-                                                            context,
-                                                            double.parse(model
-                                                                .prVarientList![
-                                                                    model
-                                                                        .selVarient!]
-                                                                .price!),
-                                                          )!,
-                                                    style: const TextStyle(
-                                                        color: black,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontFamily:
-                                                            "PlusJakartaSans",
-                                                        fontStyle:
-                                                            FontStyle.normal,
-                                                        fontSize:
-                                                            textFontSize14),
-                                                  )
+                                                ? Expanded(
+                                                  child: Text(
+                                                      double.parse(model
+                                                                  .prVarientList![
+                                                                      model
+                                                                          .selVarient!]
+                                                                  .disPrice!) !=
+                                                              0
+                                                          ? DesignConfiguration
+                                                              .getPriceFormat(
+                                                              context,
+                                                              double.parse(model
+                                                                  .prVarientList![
+                                                                      model
+                                                                          .selVarient!]
+                                                                  .disPrice!),
+                                                            )!
+                                                          : DesignConfiguration
+                                                              .getPriceFormat(
+                                                              context,
+                                                              double.parse(model
+                                                                  .prVarientList![
+                                                                      model
+                                                                          .selVarient!]
+                                                                  .price!),
+                                                            )!,
+                                                      style: const TextStyle(
+                                                          color: black,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                          fontFamily:
+                                                              "PlusJakartaSans",
+                                                          fontStyle:
+                                                              FontStyle.normal,
+                                                          fontSize:
+                                                              textFontSize14),
+                                                    ),
+                                                )
                                                 : Container(),
                                           ],
                                         ),
@@ -660,33 +668,37 @@ class StateProduct extends State<ProductList>
                                     : Container(),
                                 Row(
                                   children: [
-                                    Text(
-                                      '${getTranslated(context, 'Quantity')!} : ',
-                                      style: const TextStyle(
-                                        color: lightBlack2,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: "PlusJakartaSans",
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: textFontSize14,
+                                    Expanded(
+                                      child: Text(
+                                        '${getTranslated(context, 'Quantity')!} : ',
+                                        style: const TextStyle(
+                                          color: lightBlack2,
+                                          fontWeight: FontWeight.w400,
+                                          fontFamily: "PlusJakartaSans",
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: textFontSize14,
+                                        ),
+                                        textAlign: TextAlign.left,
                                       ),
-                                      textAlign: TextAlign.left,
                                     ),
-                                    Text(
-                                      model.stockType == "2"
-                                          ? model.totalStock == null ||
-                                                  model.totalStock! == ""
-                                              ? "0"
-                                              : model.totalStock!
-                                          : model.stock == null ||
-                                                  model.stock! == ""
-                                              ? "0"
-                                              : model.stock!,
-                                      style: const TextStyle(
-                                        color: black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: "PlusJakartaSans",
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: textFontSize14,
+                                    Expanded(
+                                      child: Text(
+                                        model.stockType == "2"
+                                            ? model.totalStock == null ||
+                                                    model.totalStock! == ""
+                                                ? "0"
+                                                : model.totalStock!
+                                            : model.stock == null ||
+                                                    model.stock! == ""
+                                                ? "0"
+                                                : model.stock!,
+                                        style: const TextStyle(
+                                          color: black,
+                                          fontWeight: FontWeight.w400,
+                                          fontFamily: "PlusJakartaSans",
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: textFontSize14,
+                                        ),
                                       ),
                                     )
                                   ],

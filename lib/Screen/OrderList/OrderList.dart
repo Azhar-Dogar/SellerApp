@@ -603,43 +603,49 @@ class _OrderListState extends State<OrderList>
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * .375,
-            height: 30,
-            child: ElevatedButton(
-              onPressed: () => _startDate(context),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(color: primary),
-                backgroundColor: primary,
-                foregroundColor: Colors.white,
-                disabledForegroundColor: Colors.grey,
-              ),
-              child: Text(
-                orderListProvider!.start == null
-                    ? getTranslated(context, "Start Date")!
-                    : orderListProvider!.start!,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+          Expanded(
+            child: SizedBox(
+              // width: MediaQuery.of(context).size.width * .375,
+              // height: 30,
+              child: ElevatedButton(
+                onPressed: () => _startDate(context),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(color: primary),
+                  backgroundColor: primary,
+                  foregroundColor: Colors.white,
+                  disabledForegroundColor: Colors.grey,
+                ),
+                child: Text(
+                  orderListProvider!.start == null
+                      ? getTranslated(context, "Start Date")!
+                      : orderListProvider!.start!,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * .375,
-            height: 30,
-            child: ElevatedButton(
-              onPressed: () => _endDate(context),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: primary,
-                foregroundColor: Colors.white,
-                disabledForegroundColor: Colors.grey,
+          const SizedBox(width: 10,),
+          Expanded(
+            child: SizedBox(
+              // width: MediaQuery.of(context).size.width * .375,
+              // height: 30,
+              child: ElevatedButton(
+                onPressed: () => _endDate(context),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: primary,
+                  foregroundColor: Colors.white,
+                  disabledForegroundColor: Colors.grey,
+                ),
+                child: Text(orderListProvider!.end == null
+                    ? getTranslated(context, "End Date")!
+                    : orderListProvider!.end!),
               ),
-              child: Text(orderListProvider!.end == null
-                  ? getTranslated(context, "End Date")!
-                  : orderListProvider!.end!),
             ),
           ),
+          const SizedBox(width: 10,),
           SizedBox(
-            height: 30,
-            width: 40,
+            // height: 30,
+            // width: 40,
             child: ElevatedButton(
               onPressed: () {
                 setState(

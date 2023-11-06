@@ -22,25 +22,32 @@ class ApiBaseHelper {
     print("parameter : $parameter");
     print("url : $url");
     try {
+       print("In try Phase");
       final response = await post(
         url,
-        body: parameter.isNotEmpty ? parameter : null,
+        body: parameter,
         headers: headers,
       ).timeout(
         const Duration(
           seconds: timeOut,
         ),
       );
+      print("status code");
+      print(response.statusCode);
       print("response : ${response.body.toString()}");
 
       print(
           "Parameter = $parameter , API = $url,response : ${response.body.toString()}");
       responseJson = _response(response);
-    } on SocketException {
-      throw FetchDataException('No Internet connection');
-    } on TimeoutException {
-      throw FetchDataException('Something went wrong, try again later');
+    }catch(e){
+      print("catch error");
+      print(e.toString());
     }
+    // on SocketException {
+    //   throw FetchDataException('No Internet connection');
+    // } on TimeoutException {
+    //   throw FetchDataException('Something went wrong, try again later');
+    // }
     return responseJson;
   }
 

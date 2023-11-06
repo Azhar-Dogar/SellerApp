@@ -26,6 +26,8 @@ class LoginProvider extends ChangeNotifier {
 
     ApiBaseHelper().postAPICall(getUserLoginApi, data).then(
       (getdata) async {
+        print("get data");
+        print(getdata);
         bool error = getdata["error"];
         String? msg = getdata["message"];
         if (!error) {

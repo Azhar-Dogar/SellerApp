@@ -92,6 +92,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
   Future<void> checkNetwork() async {
     isNetworkAvail = await isNetworkAvailable();
     if (isNetworkAvail) {
+      print("start login");
       context.read<LoginProvider>().getLoginUser(
             context,
             scaffoldMessengerKey,

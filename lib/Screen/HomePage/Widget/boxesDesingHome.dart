@@ -74,7 +74,7 @@ boxesDesingHome(
               ),
             ],
           ),
-          height: 141,
+          // height: 141,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,

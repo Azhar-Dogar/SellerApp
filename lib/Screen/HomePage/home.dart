@@ -214,61 +214,67 @@ class _HomeState extends State<Home>
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(
-                    style: curChart == 0
-                        ? TextButton.styleFrom(
-                            foregroundColor: Colors.white,
-                            backgroundColor: primary,
-                            disabledForegroundColor: Colors.grey,
-                          )
-                        : null,
-                    onPressed: () {
-                      setState(
-                        () {
-                          curChart = 0;
-                        },
-                      );
-                    },
-                    child: Text(
-                      getTranslated(context, "Day")!,
+                  Expanded(
+                    child: TextButton(
+                      style: curChart == 0
+                          ? TextButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              backgroundColor: primary,
+                              disabledForegroundColor: Colors.grey,
+                            )
+                          : null,
+                      onPressed: () {
+                        setState(
+                          () {
+                            curChart = 0;
+                          },
+                        );
+                      },
+                      child: Text(
+                        getTranslated(context, "Day")!,
+                      ),
                     ),
                   ),
-                  TextButton(
-                    style: curChart == 1
-                        ? TextButton.styleFrom(
-                            foregroundColor: Colors.white,
-                            backgroundColor: primary,
-                            disabledForegroundColor: Colors.grey,
-                          )
-                        : null,
-                    onPressed: () {
-                      setState(
-                        () {
-                          curChart = 1;
-                        },
-                      );
-                    },
-                    child: Text(
-                      getTranslated(context, "Week")!,
+                  Expanded(
+                    child: TextButton(
+                      style: curChart == 1
+                          ? TextButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              backgroundColor: primary,
+                              disabledForegroundColor: Colors.grey,
+                            )
+                          : null,
+                      onPressed: () {
+                        setState(
+                          () {
+                            curChart = 1;
+                          },
+                        );
+                      },
+                      child: Text(
+                        getTranslated(context, "Week")!,
+                      ),
                     ),
                   ),
-                  TextButton(
-                    style: curChart == 2
-                        ? TextButton.styleFrom(
-                            foregroundColor: Colors.white,
-                            backgroundColor: primary,
-                            disabledForegroundColor: Colors.grey,
-                          )
-                        : null,
-                    onPressed: () {
-                      setState(
-                        () {
-                          curChart = 2;
-                        },
-                      );
-                    },
-                    child: Text(
-                      getTranslated(context, "Month")!,
+                  Expanded(
+                    child: TextButton(
+                      style: curChart == 2
+                          ? TextButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              backgroundColor: primary,
+                              disabledForegroundColor: Colors.grey,
+                            )
+                          : null,
+                      onPressed: () {
+                        setState(
+                          () {
+                            curChart = 2;
+                          },
+                        );
+                      },
+                      child: Text(
+                        getTranslated(context, "Month")!,
+                      ),
                     ),
                   ),
                 ],
@@ -533,7 +539,7 @@ class _HomeState extends State<Home>
                                                                       .overallSale!
                                                                       .toString()),
                                                                 ) ??
-                                                                '0.0',
+                                                                value.overallSale.toString()??'10.0',
                                                             style: const TextStyle(
                                                                 color: black,
                                                                 fontWeight:
@@ -627,29 +633,29 @@ class _HomeState extends State<Home>
                                       top: 15,
                                     ),
                                     child: Row(
-                                      children: [
-                                        boxesDesingHome(
-                                          'Balance',
-                                          getTranslated(
-                                              context, 'BALANCE_LBL')!,
-                                          DesignConfiguration.getPriceFormat(
-                                              context,
-                                              double.parse(CUR_BALANCE))!,
-                                          0,
-                                          context,
-                                        ),
-                                        boxesDesingHome(
-                                          'Report',
-                                          getTranslated(
-                                              context, 'Sales Report')!,
-                                          DesignConfiguration.getPriceFormat(
-                                              context,
-                                              double.parse(value
-                                                  .grandFinalTotalOfSales)),
-                                          1,
-                                          context,
-                                        ),
-                                      ],
+                                      // children: [
+                                      //   // boxesDesingHome(
+                                      //   //   'Balance',
+                                      //   //   getTranslated(
+                                      //   //       context, 'BALANCE_LBL')!,
+                                      //   //   DesignConfiguration.getPriceFormat(
+                                      //   //       context,
+                                      //   //       double.parse(CUR_BALANCE))!,
+                                      //   //   0,
+                                      //   //   context,
+                                      //   // ),
+                                      //   boxesDesingHome(
+                                      //     'Report',
+                                      //     getTranslated(
+                                      //         context, 'Sales Report')!,
+                                      //     DesignConfiguration.getPriceFormat(
+                                      //         context,
+                                      //         double.parse(value
+                                      //             .grandFinalTotalOfSales)),
+                                      //     1,
+                                      //     context,
+                                      //   ),
+                                      // ],
                                     ),
                                   ),
                                   Padding(
@@ -764,6 +770,8 @@ class _HomeState extends State<Home>
     Map parameter = {};
     ApiBaseHelper().postAPICall(getSettingsApi, parameter).then(
       (getdata) async {
+        print("Here is Settings Data");
+        print(getdata);
         bool error = getdata['error'];
         String? msg = getdata['message'];
 

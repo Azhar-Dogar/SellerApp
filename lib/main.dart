@@ -1,4 +1,5 @@
 import 'dart:io';
+// import 'package:universal_io/io.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -51,18 +52,33 @@ class MyHttpOverrides extends HttpOverrides {
           (X509Certificate cert, String host, int port) => true;
   }
 }
-
+// Future<void> initializeFirebase() async {
+//   try {
+//     if (kIsWeb) {
+//       // Initialize Firebase for web
+//       await Firebase.initializeApp(
+//         options: DefaultFirebaseOptions.web,
+//         name: 'delivery_boy',
+//       );
+//     } else {
+//       // Initialize Firebase for non-web platforms
+//       await Firebase.initializeApp(
+//         options: DefaultFirebaseOptions.currentPlatform,
+//         name: 'delivery_boy',
+//       );
+//     }
+//
+//     // Rest of your code...
+//   } catch (e) {
+//     print('Error initializing Firebase: $e');
+//   }
+// }
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  if (Firebase.apps.isNotEmpty) {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-  } else {
-    await Firebase.initializeApp();
-  }
-
+  await Firebase.initializeApp(
+    // name: "seller_app",
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   HttpOverrides.global = MyHttpOverrides();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   FirebaseMessaging.onBackgroundMessage(myForgroundMessageHandler);

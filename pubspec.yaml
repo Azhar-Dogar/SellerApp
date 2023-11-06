@@ -50,6 +50,7 @@ dependencies:
   open_filex: ^4.3.2
   external_path: ^1.0.3
   path_provider: ^2.0.14
+  universal_io: ^2.2.2
 
 dependency_overrides:
   intl: ^0.18.1

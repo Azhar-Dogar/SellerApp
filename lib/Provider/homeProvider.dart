@@ -54,6 +54,7 @@ class HomeProvider extends ChangeNotifier {
       var parameter = {
         SellerId: context.read<SettingProvider>().currentUerID,
       };
+
       var totalOFSales = await HomeRepository.fetchSalesReport(
         parameter: parameter,
       );
@@ -72,6 +73,8 @@ class HomeProvider extends ChangeNotifier {
       totalcustCount = count["user_counter"];
       delPermission = count["permissions"]['assign_delivery_boy'];
       overallSale = getStatics['earnings'][0]["overall_sale"];
+      print("Overall sale");
+      print(overallSale);
       weekEarning = getStatics['earnings'][0]["weekly_earnings"]['total_sale'];
       days = getStatics['earnings'][0]["daily_earnings"]['day'];
       dayEarning = getStatics['earnings'][0]["daily_earnings"]['total_sale'];
